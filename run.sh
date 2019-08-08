@@ -10,5 +10,7 @@ echo "[INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.
 echo "[INFO] Running com.github.noraui.gherkin.GherkinConditionedLoopedStepUT" >> nonaui.log
 
 counterFailures=$(sed -n 's/.*\[INFO\] Tests run: \(.*\), Failures: \([1-9]\), Errors: \(.*\), Skipped: \(.*\), Time elapsed.*UT.*/\2/p' nonaui.log | head -n 1)
-echo "******** counter: $counterFailures"
+echo "******** counter Failures : $counterFailures"
 
+counterErrors=$(sed -n 's/.*\[INFO\] Tests run: \(.*\), Failures: \(.*\), Errors: \([1-9]\), Skipped: \(.*\), Time elapsed.*UT.*/\2/p' nonaui.log | head -n 1)
+echo "******** counter Errors: $counterErrors"
