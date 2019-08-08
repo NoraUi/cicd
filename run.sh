@@ -5,6 +5,8 @@ echo "[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.1
 echo "[INFO] Running com.github.noraui.gherkin.GherkinConditionedLoopedStepUT"
 
 curl -s "https://api.travis-ci.org/jobs/${TRAVIS_JOB_ID}/log.txt?deansi=true" > nonaui.log
+
+echo "-------------- nonaui.log ----------------"
 cat nonaui.log
 
 counterFailures=$(sed -n 's/.*Tests run.*Failures: \([0-9]+\).*/\1/p' nonaui.log | head -n 1)
