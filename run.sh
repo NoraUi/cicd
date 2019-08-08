@@ -6,5 +6,5 @@ echo "[INFO] Running com.github.noraui.gherkin.GherkinConditionedLoopedStepUT"
 
 curl -s "https://api.travis-ci.org/jobs/${TRAVIS_JOB_ID}/log.txt?deansi=true" > nonaui.log
 
-counterFailures=$(sed -n 's:.*Timed out\(.*\)message.*:\1:p' nonaui.log | head -n 1)
+counterFailures=$(sed -n 's:.*[INFO] Tests run: 4, Failures:\(.*\), Errors: 0, Skipped: 0, Time elapsed.*:\1:p' nonaui.log | head -n 1)
 echo "******** counter: $counterFailures"
