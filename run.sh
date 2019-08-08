@@ -7,6 +7,6 @@ echo "[INFO] Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.1
 echo "[INFO] Tests run: 35, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 7.45 s - in com.github.noraui.browser.FooUT" >> nonaui.log
 echo "[INFO] Running com.github.noraui.gherkin.GherkinConditionedLoopedStepUT" >> nonaui.log
 
-counterFailures=$(sed -n 's/.*\[INFO\] Tests run: \(.*\), Failures: \(.*\), Errors: \(.*\), Skipped: \(.*\), Time elapsed.*/\1/p' nonaui.log)
+counterFailures=$(sed -n 's/.*\[INFO\] Tests run: \(.*\), Failures: \([1-9]+\), Errors: \([1-9]+\), Skipped: \(.*\), Time elapsed*UT.*/\1/p' nonaui.log)
 echo "******** counter: $counterFailures"
 
